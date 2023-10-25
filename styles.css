@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #4d4d4d;
+}
+
+.box-game {
+  margin: 40px;
+  display: flex;
+}
+
+.box-container {
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  width: 10vw;
+  height: 10vw;
+  background-color: #8ce9e5;
+  border-radius: 12px;
+  display: flex;
+  margin: 2px;
+}
+
+.col span {
+  margin: auto;
+  font-size: 3vw;
+}
+
+.modal {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff3d;
+  position: absolute;
+  top: 0;
+}
+
+.modal-content {
+  margin: auto;
+}
+
+.modal .msg-box {
+  padding: 20px;
+  background-color: #f772f3;
+  font-size: 3vw;
+  border-radius: 18px;
+}
