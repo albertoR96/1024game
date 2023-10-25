@@ -1,4 +1,5 @@
 var game1024 = false;
+var game1024Over = false;
 function getRandomNumber() {
   return parseInt(Math.random() * 4) % 2 == 0 ? 2 : 4;
 }
@@ -232,23 +233,25 @@ function doArrowDown() {
 }
 
 function gameOver() {
-  let gameOver = true;
+  game1024Over = true;
   for (const box of document.querySelectorAll(".col")) {
     if (box.children[0].innerText == "") {
-      gameOver = false;
+      game1024Over = false;
     } else if (!game1024 && parseInt(box.children[0].innerText) == 1024) {
       game1024 = true;
       document.getElementById("modal-container").style.display = "flex";
       document.getElementById("msg").innerText = "WINNER WINNER CHICKEN DINER";
     }
   }
-  return gameOver;
+  return game1024Over;
 }
 
 function windowKeyDownEvent(e) {
   let setRandomBoxB = false;
   if (game1024) {
     document.getElementById("modal-container").style.display = "none";
+  } else if (game1024Over) {
+    return;
   }
   switch (e.keyCode) {
     case 37:
